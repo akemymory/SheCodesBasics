@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      h1 {
+        font-size: 38px;
+        text-align: center;
+        color: #1964d6;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0px;
+      }
+      h2 {
+        font-size: 38px;
+        text-align: center;
+        color: #1964d6;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0px;
+        margin: 0;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        font-weight: normal;
+        max-width: 400px;
+        max-height: 20px;
+        font-family: monospace;
+      }
+
+      button {
+        margin: 20px auto;
+        display: block;
+        color: white;
+        font-size: 16px;
+        background: #1964d6;
+        padding: 15px 20px;
+        border: 1px solid #1964d6;
+        border-radius: 30px;
+        box-shadow: 2px 2px 5px 0px #d7d3e2;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background-color: transparent;
+        color: #1964d6;
+        border: 1px solid #1964d6;
+        border-radius: 30px;
+      }
+
+      .currently-weather {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .currently-low {
+        font-size: 28px;
+        text-align: center;
+        color: black;
+        font-weight: normal;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .currently-high {
+        font-size: 28px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .next-days {
+        margin: 0px auto;
+        padding: 20px 0;
+        max-width: 400px;
+        transition: all 200ms ease-in-out;
+        position: block;
+      }
+      .next-days:hover {
+        margin: 0px auto;
+        padding: 20px 0;
+        background-color: #faf4d7;
+        max-width: 400px;
+        border-radius: 10px;
+      }
+      .next-days-title {
+        text-align: center;
+        font-size: 22px;
+        color: black;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px auto;
+        padding: 20px auto 0 auto;
+      }
+      .credits {
+        text-align: center;
+        font-family: monospace;
+        font-size: 20px;
+        padding: 10px;
+      }
+    </style>
+
+    <div class="currently-weather">
+      <h2>🌤</h2>
+      <h1>Currently 27ºC in Lisbon</h1>
+      <span class="currently-low"> 19º / </span>
+      <span class="currently-high">28º</span>
+    </div>
+    <div class="next-days">
+      <div class="next-days-title">🔆 Tomorrow</div>
+      <p>18º / <strong>30º</strong></p>
+    </div>
+    <div class="next-days">
+      <div class="next-days-title">🔆 Friday</div>
+      <p>18º / <strong>27º</strong></p>
+    </div>
+    <div class="next-days">
+      <div class="next-days-title">🔆 Saturday</div>
+      <p>18º / <strong>26º</strong></p>
+    </div>
+
+    <button>Change city</button>
+    <div class="credits">Coded by Akemy Mory</div>
+    <script>
+      function changeTemperature() {
+        let city = prompt("What city do you live in??");
+        let temperature = prompt("What temperature is it?");
+        if (temperature >= 15 || temperature <= 30) {
+          let h2 = document.querySelector("h2");
+          h2.innerHTML = "😄";
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = "Currently " + temperature + "ºC in " + city;
+        }
+        if (temperature <= 15) {
+          let h2 = document.querySelector("h2");
+          h2.innerHTML = "🥶";
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = "Currently " + temperature + "ºC in " + city;
+        } else {
+          let h2 = document.querySelector("h2");
+          h2.innerHTML = "🔥";
+          let h1 = document.querySelector("h1");
+          h1.innerHTML = "Currently " + temperature + "ºC in " + city;
+        }
+      }
+
+      let changeCity = document.querySelector("button");
+
+      changeCity.addEventListener("click", changeTemperature);
+    </script>
+  </body>
+</html>

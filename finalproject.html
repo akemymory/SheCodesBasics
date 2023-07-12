@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latte Art</title>
+  </head>
+  <style>
+    h1 {
+      font-size: 32px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #332416;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    img {
+      box-shadow: 2px 2px 5px 0px gray;
+      border: 3px solid white;
+    }
+
+    h2 {
+      font-family: Arial, Helvetica, serif;
+      font-weight: normal;
+      color: #332416;
+    }
+
+    p {
+      color: #332416;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.5em;
+    }
+
+    a {
+      color: #332416;
+    }
+    a:hover {
+      color: white;
+    }
+
+    button {
+      margin: 10px auto;
+      display: block;
+      color: white;
+      font-size: 16px;
+      background: #4d3621;
+      padding: 10px 15px;
+      border: 1px solid #4d3621;
+      border-radius: 30px;
+      box-shadow: 2px 2px 5px 0px #4d3621;
+      transition: all 200ms ease-in-out;
+      text-decoration: bold;
+    }
+
+    button:hover {
+      background-color: white;
+      color: #4d3621;
+      border: 1px solid #4d3621;
+      border-radius: 30px;
+      text-decoration: bold;
+    }
+
+    .landingPage {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+      border-radius: 30px;
+      box-shadow: 2px 2px 5px 0px gray;
+    }
+
+    .credits {
+      font-family: monospace;
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <div class="landingPage">
+      <h1>Painted with Perfection</h1>
+      <img
+        width="300"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/499/original/nathan-dumlao-XOhI_kW_TaM-unsplash.jpg?1689187286"
+      />
+      <h2><em>Latte Art that Inspires</em></h2>
+      <hr />
+      <p>
+        <strong>Latte art</strong> is a captivating form of creative expression
+        that elevates the simple act of sipping a cup of coffee to an aesthetic
+        experience. Skilled baristas transform steamed milk and rich espresso
+        into intricate designs and patterns, turning an ordinary latte into a
+        work of art. With deft hand movements and an eye for detail, they
+        skillfully pour the milk, coaxing it to form delicate hearts, graceful
+        rosettas, or even whimsical shapes. Each creation is unique, reflecting
+        the barista's expertise and artistic flair. Latte art not only delights
+        the eyes but also enhances the overall coffee-drinking experience,
+        adding a touch of beauty and elegance to each sip. It's a testament to
+        the dedication, passion, and craftsmanship behind every cup, making
+        latte art a truly enchanting fusion of creativity and caffeination.
+        <br />
+        <br />
+        <a href="https://en.wikipedia.org/wiki/Latte_art">Read more</a> <br />
+        <br />
+        <button>Find a Course</button>
+      </p>
+      <span class="credits">Coded by Akemy Mory</span>
+    </div>
+    <script>
+      function find() {
+        let name = prompt("What's your name?");
+        let city = prompt("Where are you?");
+
+        if (city === "Lisbon") {
+          window.location.assign(
+            "https://www.google.com/search?q=latte+art+lisbon+courses"
+          );
+        } else {
+          alert("Sorry, no offers at the moment");
+        }
+      }
+
+      let findCourses = document.querySelector("button");
+
+      findCourses.addEventListener("click", find);
+    </script>
+  </body>
+</html>
